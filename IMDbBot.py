@@ -6,8 +6,10 @@ reddit = praw.Reddit('bot1', user_agent='testing bot stuff')
 subreddit=reddit.subreddit('MovieSuggestions')
 
 
-REPLY_TEMPLATE = (  'Title | {0}\n'
-                    'Directors | {1}\n'
+REPLY_TEMPLATE = (  '|||\n'
+                    '---|---\n'
+                    'Title | {0}\n'
+                    'Director(s) | {1}\n'
                     'Rating | {2}/10\n'
                     'Summary | {3}\n' )  
 

@@ -4,6 +4,15 @@ Reddit bot that looks for comments that are the name of a movie in  /r/MovieSugg
 
 Currently very incomplete.
 
+### TODO list
+
+* [x] Parse Comments for Movie titles
+* [x] Create reply template
+* [ ] Create link to IMDb page for more info
+* [ ] Post Reply to comment
+* [ ] Make comment parsing more accurate so that comment body can contain movit title without it being the only title
+* [ ] Eliminate false positives
+
 ## Built With
 
 * [PRAW](https://praw.readthedocs.io/en/latest/)

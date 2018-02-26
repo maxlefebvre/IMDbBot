@@ -5,13 +5,13 @@ ia = IMDb()
 reddit = praw.Reddit('bot1', user_agent='testing bot stuff') 
 subreddit=reddit.subreddit('MovieSuggestions')
 
-
+IMDB_LINK = 'https://www.imdb.com/title/{}'
 REPLY_TEMPLATE = (  '|||\n'
                     '---|---\n'
-                    'Title | {0}\n'
-                    'Director(s) | {1}\n'
-                    'Rating | {2}/10\n'
-                    'Summary | {3}\n' )  
+                    'Title | [{0}]({1})\n'
+                    'Director(s) | {2}\n'
+                    'Rating | {3}/10\n'
+                    'Summary | {4}\n' )  
 
 def main():
     # Fetches top 25 posts from specfic subreddit
@@ -40,7 +40,8 @@ def print_movie(movie):
         for line in movie['plot summary'][0]:
             summary += line
         summary += '...'
-        reply = REPLY_TEMPLATE.format(title, directors, rating, summary)
+        link = IMDB_LINK.format(movie.movieID)
+        reply = REPLY_TEMPLATE.format(title, link, directors, rating, summary)
         print(reply)
 
 if __name__ == '__main__':

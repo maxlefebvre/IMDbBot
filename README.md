@@ -8,7 +8,7 @@ Currently very incomplete.
 
 * [x] Parse Comments for Movie titles
 * [x] Create reply template
-* [ ] Create link to IMDb page for more info
+* [x] Create link to IMDb page for more info
 * [ ] Post Reply to comment
 * [ ] Make comment parsing more accurate so that comment body can contain movit title without it being the only title
 * [ ] Eliminate false positives

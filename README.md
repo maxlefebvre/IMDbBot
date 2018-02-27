@@ -9,8 +9,10 @@ Currently very incomplete.
 * [x] Parse Comments for Movie titles
 * [x] Create reply template
 * [x] Create link to IMDb page for more info
+* [ ] Add movie cover to reply table
 * [ ] Post Reply to comment
 * [ ] Make comment parsing more accurate so that comment body can contain movit title without it being the only title
+* [ ] Make reply more malleable,e.g. if rating is unavailable, post but with it it.
 * [ ] Eliminate false positives
 
 ## Built With

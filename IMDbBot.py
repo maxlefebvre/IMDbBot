@@ -25,14 +25,22 @@ def main():
         submission.comments.replace_more(limit=None)
         for comment in submission.comments.list():
             process_comments(comment)
+    
+    # For Testing: 
+    # for comment in reddit.submission(url='https://www.reddit.com/r/testingground4bots/comments/80o6x7/test123/?st=je5x4yv3&sh=f4d798b9').comments.list():
+    #     process_comments(comment)
 
 
 def process_comments(comment):
+    # TODO: Check author so bot doesn't reply to itself
     movies = ia.search_movie(comment.body)
     if movies:
         movie = ia.get_movie(movies[0].movieID)
         #print('Comment: ' + comment.body)
-        print_movie(movie)
+
+        # TODO: Remove this for testing on live subreddits
+        # reply = print_movie(movie)
+        # comment.reply(reply)
 
             
 def print_movie(movie):
@@ -50,6 +58,7 @@ def print_movie(movie):
         link = IMDB_LINK.format(movie.movieID)
         reply = REPLY_TEMPLATE.format(title, link, directors, rating, summary)
         print(reply)
+        return reply
     except KeyError:
         print('KeyError: Missing some info, going to next movie')
 
